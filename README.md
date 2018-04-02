@@ -18,7 +18,13 @@ Para o uso é necessário possuir o Docker e o Docker Compose em sua máquina. C
 
 Para rodar a aplicação, entre na pasta do projeto em que está localizado o __docker-compose__ e digite no terminal:
 
- &emsp;&emsp; Caso seja a primeira vez que esteja rodando a aplicação crie o banco primeiro:
+&emsp;&emsp; Primeiro (Depois não precisará rodar esse comando mais): 
+
+```
+  docker-compose build
+```
+
+ &emsp;&emsp; Caso seja a primeira vez que esteja rodando a aplicação crie o banco:
 
 ```
   docker-compose run web rake db:create
