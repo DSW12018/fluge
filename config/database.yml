@@ -8,10 +8,10 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: fluge_development
 
 
 test:
   <<: *default
-  database: myapp_test
+  database: fluge_test
 

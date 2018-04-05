@@ -18,7 +18,7 @@ Para o uso é necessário possuir o Docker e o Docker Compose em sua máquina. C
 
 Para rodar a aplicação, entre na pasta do projeto em que está localizado o __docker-compose__ e digite no terminal:
 
-&emsp;&emsp; Primeiro (Depois não precisará rodar esse comando mais): 
+&emsp;&emsp; Primeiro (Depois não precisará rodar esse comando mais):
 
 ```
   docker-compose build
@@ -27,13 +27,13 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
  &emsp;&emsp; Caso seja a primeira vez que esteja rodando a aplicação crie o banco:
 
 ```
-  docker-compose run web rake db:create
+  docker-compose exec web rake db:setup
 ```
 
- &emsp;&emsp; Em seguida use o comando. 
+ &emsp;&emsp; Em seguida use o comando.
 
 ```
-  docker-compose up 
+  docker-compose up
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:3000
 
@@ -46,7 +46,7 @@ Espere até que todos os serviços estejam disponíveis, acesse a página inicia
  ```
 
  &emsp;&emsp; Para desligar o ambiente de maneira completa. (Para e remove os containers, networks, volumes e imagens criadas pelo "up")
- 
+
  ```terminal
   docker-compose down
  ```
@@ -66,14 +66,14 @@ Espere até que todos os serviços estejam disponíveis, acesse a página inicia
 * ### Comandos Relevantes
 
  &emsp;&emsp; Para a utilização do ambiente em background, basta dar o comando abaixo e ele irá ligar o container:
- 
+
  ```terminal
   docker-compose up -d
  ```
  &emsp;&emsp; Caso queira utilizar o ambiente com logs:
 
  ```terminal
-  docker-compose up 
+  docker-compose up
  ```
  &emsp;&emsp; Para a visualização dos logs quando em modo de execução background, use o comando abaixo:
 
@@ -86,23 +86,19 @@ Espere até que todos os serviços estejam disponíveis, acesse a página inicia
   ```terminal
   docker-compose stop
  ```
- &emsp;&emsp; E para religar um container parado use o comando: 
- 
+ &emsp;&emsp; E para religar um container parado use o comando:
+
  ```terminal
-  docker-compose start 
+  docker-compose start
  ```
 
  &emsp;&emsp; Para listar os containers que estão em execução:
- 
+
  ```terminal
   docker ps
  ```
  &emsp;&emsp; Para listar todos os containers já executados na sua máquina:
- 
+
  ```terminal
   docker ps -a
  ```
-
-
-
-
