@@ -49,6 +49,7 @@ GEM
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphql (1.7.14)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     listen (3.0.8)
@@ -124,6 +125,7 @@ PLATFORMS
 DEPENDENCIES
   ar-uuid
   byebug
+  graphql
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
