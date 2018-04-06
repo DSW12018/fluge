@@ -10,8 +10,9 @@
 
 Para o uso é necessário possuir o Docker e o Docker Compose em sua máquina. Caso não os possua segue abaixo os link para instalação.
 
-[Instalação docker](https://docs.docker.com/engine/installation/linux/docker-ce/)
-[Instalaão Docker-compose](https://docs.docker.com/compose/install/).
+[Instalação Docker](https://docs.docker.com/engine/installation/linux/docker-ce/)
+
+[Instalação Docker-compose](https://docs.docker.com/compose/install/).
 
 
 * ## Rodando a aplicação
