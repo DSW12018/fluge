@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: bash -c "bundle check || bundle install && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/fluge
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
