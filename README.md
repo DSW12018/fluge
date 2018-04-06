@@ -1,8 +1,8 @@
-# 🔵 FLUGE
+![](https://raw.githubusercontent.com/wiki/DSW12018/fluge/images/logo.png)
 
+## 🔵 Sobre o FLUGE
 
-## Sobre o FLUGE
-
+Flüge é uma plataforma web cuja finalidade é buscar e comprar passagens aéreas.
 
 ## 🐳 Guia para rodar o projeto com o Docker
 
