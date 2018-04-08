@@ -45,6 +45,7 @@ GEM
     builder (3.2.3)
     byebug (10.0.2)
     concurrent-ruby (1.0.5)
+    cpf_cnpj (0.4.1)
     crass (1.0.3)
     devise (4.4.3)
       bcrypt (~> 3.0)
@@ -168,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   ar-uuid
   byebug
+  cpf_cnpj
   devise
   factory_bot_rails
   graphql
