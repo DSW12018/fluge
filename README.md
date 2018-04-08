@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/b98ed068381391e797bf/maintainability)](https://codeclimate.com/github/DSW12018/fluge/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b98ed068381391e797bf/test_coverage)](https://codeclimate.com/github/DSW12018/fluge/test_coverage)     [![CircleCI](https://circleci.com/gh/DSW12018/fluge.svg?style=svg)](https://circleci.com/gh/DSW12018/fluge)
+
 ![](https://raw.githubusercontent.com/wiki/DSW12018/fluge/images/logo.png)
 
 ## 🔵 Sobre o FLUGE
