@@ -25,5 +25,14 @@ RSpec.describe Airline, type: :model do
       end
     end
 
+    it "should not create airline when iata's length is bigger than 3" do
+      begin
+        FactoryBot.create :airline, iata: "1234"
+      rescue ActiveRecord::RecordInvalid => invalid
+        errors = invalid.record.errors
+        expect(errors.include?(:iata)).to be(true)
+      end
+    end
+
   end
 end

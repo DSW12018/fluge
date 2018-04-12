@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :airline do
-    iata "MyString"
+    iata "Str"
     name "MyString"
   end
 end
