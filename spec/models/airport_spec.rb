@@ -52,7 +52,5 @@ RSpec.describe Airport, type: :model do
         expect(errors.include?(:boarding_fee)).to be(true)
       end
     end
-
-    end
   end
 end
