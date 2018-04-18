@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 20180416135536) do
     t.index ["origin_id"], name: "index_flights_on_origin_id"
   end
 
+  create_table "passengers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.integer "document_type"
+    t.string "document_number"
+    t.integer "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "flights", "aircrafts"
   add_foreign_key "flights", "airlines"
   add_foreign_key "flights", "airports", column: "destination_id"

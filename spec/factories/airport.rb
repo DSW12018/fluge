@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :airport do
-    iata "Str"
-    name "NameString"
+    iata "BSB"
+    name "Brasília"
     boarding_fee "20"
   end
 end

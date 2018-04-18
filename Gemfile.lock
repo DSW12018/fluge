@@ -155,8 +155,11 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.20.0)
     thread_safe (0.3.6)
+    timeliness (0.3.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    validates_timeliness (4.0.2)
+      timeliness (~> 0.3.7)
     warden (1.2.7)
       rack (>= 1.0)
     websocket-driver (0.6.5)
@@ -182,6 +185,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  validates_timeliness (~> 4.0)
 
 BUNDLED WITH
    1.16.1
