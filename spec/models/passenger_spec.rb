@@ -18,12 +18,30 @@ RSpec.describe Passenger, type: :model do
     end
   end
 
-  it "should not create customer when last_name is blank" do
+  it "should not create passenger when last_name is blank" do
     begin
       FactoryBot.create :passenger, last_name: ''
     rescue ActiveRecord::RecordInvalid => invalid
       errors = invalid.record.errors
       expect(errors.include?(:last_name)).to be(true)
+    end
+  end
+
+  it "should not create passenger when birth_date is blank" do
+    begin
+      FactoryBot.create :passenger, birth_date: ''
+    rescue ActiveRecord::RecordInvalid => invalid
+      errors = invalid.record.errors
+      expect(errors.include?(:birth_date)).to be(true)
+    end
+  end
+
+  it "should not create passenger when document_number is blank" do
+    begin
+      FactoryBot.create :passenger, document_number: ''
+    rescue ActiveRecord::RecordInvalid => invalid
+      errors = invalid.record.errors
+      expect(errors.include?(:document_number)).to be(true)
     end
   end
 
