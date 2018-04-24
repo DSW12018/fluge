@@ -7,5 +7,6 @@ FactoryBot.define do
     neighborhood "MyString"
     city "MyString"
     federated_unit
+    customer
   end
 end

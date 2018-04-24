@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
+  has_one :customer_address
 
   PHONE_LENGTH = 11
 

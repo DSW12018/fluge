@@ -88,5 +88,14 @@ RSpec.describe CustomerAddress, type: :model do
       end
     end
 
+    it "should not create customer_address when customer is blank" do
+      begin
+				FactoryBot.create :customer_address, customer: nil
+			rescue ActiveRecord::RecordInvalid => invalid
+				errors = invalid.record.errors
+				expect(errors.include?(:customer)).to be(true)
+      end
+    end
+
   end
 end

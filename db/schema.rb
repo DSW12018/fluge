@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424021832) do
+ActiveRecord::Schema.define(version: 20180424044303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,7 @@ ActiveRecord::Schema.define(version: 20180424021832) do
   end
 
   create_table "customer_addresses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "zip_code">>>>>>> Creating customer_address
-
+    t.string "zip_code"
     t.string "address"
     t.string "number"
     t.string "complement"
@@ -49,6 +48,8 @@ ActiveRecord::Schema.define(version: 20180424021832) do
     t.uuid "federated_unit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "customer_id"
+    t.index ["customer_id"], name: "index_customer_addresses_on_customer_id"
     t.index ["federated_unit_id"], name: "index_customer_addresses_on_federated_unit_id"
   end
 
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 20180424021832) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "customer_addresses", "customers"
   add_foreign_key "customer_addresses", "federated_units"
   add_foreign_key "flights", "aircrafts"
   add_foreign_key "flights", "airlines"
