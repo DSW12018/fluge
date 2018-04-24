@@ -44,9 +44,10 @@ RSpec.describe Airport, type: :model do
       end
     end
 
-    it "should not create airport when boarding_fee is lower than 1" do
+
+    it "should not create airport when boarding_fee is negative" do
       begin
-        FactoryBot.create :airport, boarding_fee: -10
+        FactoryBot.create :airport, boarding_fee: "-10"
       rescue ActiveRecord::RecordInvalid => RecordInvalid
         errors = invalid.record.errors
         expect(errors.include?(:boarding_fee)).to be(true)
