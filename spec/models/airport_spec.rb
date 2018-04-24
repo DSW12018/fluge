@@ -44,6 +44,7 @@ RSpec.describe Airport, type: :model do
       end
     end
 
+
     it "should not create airport when boarding_fee is negative" do
       begin
         FactoryBot.create :airport, boarding_fee: "-10"
