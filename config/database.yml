@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: <%=ENV['POSTGRES_HOST']%>
   username: postgres
   password:
   pool: 5
@@ -15,3 +15,7 @@ test:
   <<: *default
   database: fluge_test
 
+production:
+  <<: *default
+  host: localhost
+  database: fluge_production
