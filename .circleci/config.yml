@@ -69,7 +69,7 @@ jobs:
     working_directory: ~/repo
     environment:
       HEROKU_APP: "fluge-staging-api"
-      GIT_BRANCH: "TS04-ConfigurarIntegraçãoContinua"
+      GIT_BRANCH: "development"
     steps:
       - checkout
       - run:
@@ -113,4 +113,4 @@ workflows:
             - build
           filters:
             branches:
-              only: "TS04-ConfigurarIntegraçãoContinua"
+              only: "master"
