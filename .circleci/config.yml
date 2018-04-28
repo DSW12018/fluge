@@ -68,7 +68,7 @@ jobs:
       enabled: true
     working_directory: ~/repo
     environment:
-      HEROKU_APP: "fluge-staging-api"
+      HEROKU_APP: "fluge-api-staging"
       GIT_BRANCH: "development"
     steps:
       - checkout
