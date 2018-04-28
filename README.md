@@ -27,16 +27,16 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
   docker-compose build
 ```
 
- &emsp;&emsp; Caso seja a primeira vez que esteja rodando a aplicação crie o banco:
-
-```
-  docker-compose exec web rake db:setup
-```
-
- &emsp;&emsp; Em seguida use o comando.
+ &emsp;&emsp; Em seguida use o comando para subir o ambiente com logs.
 
 ```
   docker-compose up
+```
+
+ &emsp;&emsp; Após ter subido o ambiente em um terminal, caso seja a primeira vez que esteja rodando a aplicação, crie o banco (em outro terminal e com o ambiente ainda rodando no anterior):
+
+```
+  docker-compose exec web rake db:setup
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:3000
 
