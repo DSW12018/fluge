@@ -7,4 +7,6 @@ class Flight < ApplicationRecord
     belongs_to :origin, class_name: "Airport"
     belongs_to :destination, class_name: "Airport"
     belongs_to :aircraft
+
+    time_of_day_attr :departure, :arrival, :duration
 end
