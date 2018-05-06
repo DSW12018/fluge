@@ -4,7 +4,9 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   field :allAirlines, !types[Types::AirlineType] do
     description 'All airlines'
-    resolve ->(object, args, ctx) { Airline.all }
+    resolve ->(object, args, ctx) {
+      Airline.all
+    }
   end
 
   field :allAircrafts, !types[Types::AircraftType] do

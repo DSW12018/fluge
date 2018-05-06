@@ -180,6 +180,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    time_of_day_attr (2.0.1)
+      rails (>= 3.2.14)
     timeliness (0.3.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -215,6 +217,7 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
+  time_of_day_attr
   tzinfo-data
   uglifier
   validates_timeliness (~> 4.0)
