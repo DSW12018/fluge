@@ -29,6 +29,7 @@ aircrafts = [
   ['332', 'Airbus A330-200', 'Airbus Industrie', 'A332/H'],
   ['737', 'Boeing 737-700', 'Boeing', 'B737/M'],
   ['738', 'Boeing 737-800', 'Boeing', 'B738/M'],
+  ['763', 'Boeing 767-300', 'Boeing', 'B763/H'],
   ['190', 'Embraer ERJ-190', 'Embraer', 'E190/M'],
   ['ATR', 'ATR 72-600', 'Aerospatiale', 'AT72/M'],
 ]
@@ -74,13 +75,18 @@ flights.each do |flight_row|
   airline = Airline.find_by(iata: airline[0])
 
   origin = search_array(airports, 3, flight["origin"])
+  next unless origin.present?
+
   origin = Airport.find_by(iata: origin[4])
 
   destination = search_array(airports, 3, flight["destination"])
+  next unless destination.present?
+
   destination = Airport.find_by(iata: destination[4])
 
   aircraft = search_array(aircrafts, 3, flight["aircraft"])
   aircraft = Aircraft.find_by(iata: aircraft[0])
+
 
   Flight.where(
     flight_number: flight["flight_number"],
