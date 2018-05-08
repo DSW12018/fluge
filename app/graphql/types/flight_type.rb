@@ -31,7 +31,7 @@ Types::FlightType = GraphQL::ObjectType.define do
 
   field :duration do
     type types.String
-    description "Departure time."
+    description "Duration time of the flight."
     resolve -> (obj, args, ctx) {
       TimeOfDayAttr.l(obj.duration)
     }
