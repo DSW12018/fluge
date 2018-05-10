@@ -1,4 +1,5 @@
 class Flight < ApplicationRecord
+    has_many :flight_booking
     validates :flight_number, presence: true
     validates :departure, numericality: { only_integer: true }, presence: true
     validates :arrival, numericality: { only_integer: true }, presence: true
