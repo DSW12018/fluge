@@ -10,4 +10,12 @@ class Flight < ApplicationRecord
     belongs_to :aircraft
 
     time_of_day_attr :departure, :arrival, :duration
+
+    class << self
+      def search(params)
+        origin = Airport.find_by(iata: params[:origin])
+        destination = Airport.find_by(iata: params[:destination])
+        Flight.where(origin_id: origin.id, destination_id: destination.id)
+      end
+    end
 end
