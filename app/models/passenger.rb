@@ -1,4 +1,6 @@
 class Passenger < ApplicationRecord
+  belongs_to :flight_booking
+
   enum gender: { female: 0, male: 1 }
   enum document_type: { cpf: 0, rg: 1, passaport: 2 }
 

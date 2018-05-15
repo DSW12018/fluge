@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424044303) do
+ActiveRecord::Schema.define(version: 20180510060154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(version: 20180424044303) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "flight_bookings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "localizer"
+    t.date "departure_date"
+    t.uuid "flight_id", null: false
+    t.uuid "purchase_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flight_id"], name: "index_flight_bookings_on_flight_id"
+    t.index ["purchase_id"], name: "index_flight_bookings_on_purchase_id"
+  end
+
   create_table "flights", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "flight_number"
     t.integer "departure"
@@ -109,12 +120,37 @@ ActiveRecord::Schema.define(version: 20180424044303) do
     t.integer "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "flight_booking_id"
+    t.index ["flight_booking_id"], name: "index_passengers_on_flight_booking_id"
+  end
+
+  create_table "payments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "payment_method"
+    t.integer "payment_status"
+    t.integer "amount"
+    t.uuid "purchase_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_id"], name: "index_payments_on_purchase_id"
+  end
+
+  create_table "purchases", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "purchase_status"
+    t.uuid "customer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_purchases_on_customer_id"
   end
 
   add_foreign_key "customer_addresses", "customers"
   add_foreign_key "customer_addresses", "federated_units"
+  add_foreign_key "flight_bookings", "flights"
+  add_foreign_key "flight_bookings", "purchases"
   add_foreign_key "flights", "aircrafts"
   add_foreign_key "flights", "airlines"
   add_foreign_key "flights", "airports", column: "destination_id"
   add_foreign_key "flights", "airports", column: "origin_id"
+  add_foreign_key "passengers", "flight_bookings"
+  add_foreign_key "payments", "purchases"
+  add_foreign_key "purchases", "customers"
 end

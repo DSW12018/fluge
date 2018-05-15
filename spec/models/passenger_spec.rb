@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Passenger, type: :model do
 
-  describe "validations" do
-    it "should create Passenger when it contains valid data" do
-      passenger = FactoryBot.build :passenger
-      expect(passenger).to be_valid
-    end
-  end
+  # describe "validations" do
+  #   it "should create Passenger when it contains valid data" do
+  #     passenger = FactoryBot.build :passenger
+  #     expect(passenger).to be_valid
+  #   end
+  # end
 
   it "should not create passenger when first_name is blank" do
     begin
