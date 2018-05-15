@@ -40,6 +40,11 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:3000
 
+Para carregar os dados de voos no banco de dados, use:
+```
+  docker-compose exec web rake db:seed
+```
+
 * ### Comandos Principais
 
  &emsp;&emsp; Para subir o ambiente com logs digite: (Criará a imagem baseado no Dockerfile e criará os containers de serviços que definimos no docker-compose.yml)

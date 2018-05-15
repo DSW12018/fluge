@@ -30,4 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time_of_day:
+    formats:
+      default: '%H:%M'
+      hour: '%k'
   hello: "Hello world"
