@@ -28,7 +28,10 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
-gem 'simplecov', require: false, group: :test
+group :test do
+  gem 'simplecov', require: false
+  gem 'rspec_junit_formatter'
+end
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -47,3 +50,5 @@ gem "uglifier"
 gem "coffee-rails"
 gem "cpf_cnpj"
 gem "validates_timeliness", "~> 4.0"
+gem "time_of_day_attr"
+gem "graphql-batch"
