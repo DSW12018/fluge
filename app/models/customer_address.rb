@@ -1,4 +1,5 @@
 class CustomerAddress < ApplicationRecord
+  
   belongs_to :federated_unit
   belongs_to :customer
 
@@ -12,4 +13,5 @@ class CustomerAddress < ApplicationRecord
   validates :city, presence: true
   validates :federated_unit, presence: true
   validates :customer, presence: true
+
 end
